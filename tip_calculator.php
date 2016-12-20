@@ -44,11 +44,11 @@
         if (empty($_POST['subt'])) {
           $subtError = "Subtotal is empty.";
         }
-        else if (floatval($_POST['subt']) <= 0) {
-          $subtError = "Subtotal must be greater than 0.";
-        }
         else if (!is_numeric($_POST['subt'])) {
           $subtError = "Non-numeric entry.";
+        }
+        else if (floatval($_POST['subt']) <= 0) {
+          $subtError = "Subtotal must be greater than 0.";
         }
         else {
           $subtotal = $_POST['subt'];
